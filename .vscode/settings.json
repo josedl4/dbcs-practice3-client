@@ -1,0 +1,5 @@
+{
+    "terminal.integrated.env.linux": {
+        "PATH": "/home/joselm/.platformio/penv/bin:/home/joselm/.nvm/versions/node/v8.7.0/bin:/home/joselm/bin:/home/joselm/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+    }
+}

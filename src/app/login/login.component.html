@@ -1,0 +1,29 @@
+<div class="container" id="form">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <div id="form-header">
+        <h1 class>Login</h1>
+      </div>
+      <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" required [(ngModel)]="username" name="username" #name="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" required [(ngModel)]="password" name="password">
+        </div>
+        <div class="form-group">
+          <label for="power">Type</label>
+          <select class="form-control" id="type" required [(ngModel)]="selectedType" name="type" #power="ngModel">
+            <option *ngFor="let type of types" [value]="type">{{type}}</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+      <br>
+      <p id="error-message">{{ this.errorMessage }}</p>
+    </div>
+  </div>
+</div>
+
