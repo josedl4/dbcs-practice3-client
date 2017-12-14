@@ -8,7 +8,7 @@ export class AuthGuard implements CanActivate {
 
     canActivate() {
         const username = localStorage.getItem('username');
-        if (username) {
+        if (username !== null) {
             return true;
         }
 

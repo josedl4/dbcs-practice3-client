@@ -1,0 +1,44 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="/#/coach-add">Add</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/#/coach-delete">Delete</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Logout</a>
+  </li>
+</ul>
+
+<div class="container" id="form">
+  <div class="justify-content-center">
+  
+    <form class="form-horizontal">
+        <fieldset>
+        
+        <!-- Form Name -->
+        <legend>Add Player</legend>
+        
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="selectbasic">Player</label>
+          <div class="col-md-6">
+            <select id="selectbasic" name="selectbasic" class="form-control" [(ngModel)]="selectedValue">
+              <option *ngFor="let player of players" 
+              [ngValue]="player">{{player.name}}</option>
+            </select>
+          </div>
+        </div>
+        
+        <!-- Button -->
+        <div class="form-group">
+          <div class="col-md-4">
+            <button [disabled]="check()" (click)="addPlayer()" id="singlebutton" name="singlebutton" class="btn btn-success">Button</button>
+          </div>
+        </div>
+        
+        </fieldset>
+    </form>
+
+  </div>
+</div>

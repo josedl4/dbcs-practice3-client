@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
     public router: Router) { }
 
   ngOnInit() {
+    localStorage.clear();
   }
 
   onSubmit() {
@@ -52,7 +53,7 @@ export class LoginComponent implements OnInit {
       }
 
       case 'coach': {
-        this.router.navigate(['/coach']);
+        this.router.navigate(['/coach-add']);
         break;
       }
     }
