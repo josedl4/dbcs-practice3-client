@@ -8,6 +8,7 @@ import { HttpModule } from '@angular/http';
 
 import { AdminComponent } from './admin.component';
 import { AuthGuard } from '../shared/guards/auth.guard';
+import { AdminService } from './admin.service';
 
 const adminRouting: ModuleWithProviders = RouterModule.forChild([
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard]}
@@ -20,6 +21,6 @@ const adminRouting: ModuleWithProviders = RouterModule.forChild([
     adminRouting
   ],
   declarations: [AdminComponent],
-  providers: [AuthGuard]
+  providers: [AuthGuard, AdminService]
 })
 export class AdminModule { }

@@ -11,7 +11,6 @@ export class LoginService {
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
-    console.log(JSON.stringify({username, password}));
     return this.http
       .post(this.url + '/login', JSON.stringify({username, password}), { headers: headers })
       .toPromise()
