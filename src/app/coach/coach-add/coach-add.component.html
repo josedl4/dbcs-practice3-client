@@ -33,10 +33,15 @@
         <!-- Button -->
         <div class="form-group">
           <div class="col-md-4">
-            <button [disabled]="check()" (click)="addPlayer()" id="singlebutton" name="singlebutton" class="btn btn-success">Button</button>
+            <button [disabled]="check()" (click)="addPlayer()" id="singlebutton" 
+            name="singlebutton" class="btn btn-success">Add</button>
           </div>
         </div>
         
+        <br>
+        <div [hidden]="this.successHidden" class="bg-success text-white">Operation completed successfully</div>
+        <div [hidden]="this.errorHidden" class="bg-danger text-white">{{ this.errorMessage }}</div>
+
         </fieldset>
     </form>
 

@@ -13,6 +13,9 @@ export class CoachDeleteComponent implements OnInit {
   players: Player[];
   selectedValue: Player;
   error: any;
+  errorMessage = '';
+  errorHidden = true;
+  successHidden = true;
 
   constructor(private coachService: CoachService) { }
 
@@ -32,7 +35,15 @@ export class CoachDeleteComponent implements OnInit {
     this.coachService.deletePlayer(this.selectedValue.id).then(msg => {
       console.log(msg);
       this.getPlayersInTeam();
-    }).catch(error => this.error = error);
+      this.successHidden = false;
+      this.errorHidden = true;
+      this.errorMessage = '';
+    }).catch(error => {
+      this.error = error;
+      this.errorHidden = false;
+      this.successHidden = true;
+      this.errorMessage = 'An error has occured';
+    });
   }
 
   check(): boolean {

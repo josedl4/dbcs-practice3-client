@@ -37,6 +37,10 @@
             </div>
           </div>
           
+          <br>
+          <div [hidden]="this.successHidden" class="bg-success text-white">Operation completed successfully</div>
+          <div [hidden]="this.errorHidden" class="bg-danger text-white">{{ this.errorMessage }}</div>
+
           </fieldset>
       </form>
   
