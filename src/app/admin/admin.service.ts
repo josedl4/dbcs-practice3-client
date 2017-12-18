@@ -8,7 +8,7 @@ import { Competition } from '../shared/model/competition';
 @Injectable()
 export class AdminService {
 
-  private adminUrl = 'http://localhost:8080/dbcs-practice3-server/webresources/admin';
+  private adminUrl = 'http://localhost:8080/dbcs-practice3-server/webresources/admin/jugador';
 
   constructor(private http: Http) { }
 
