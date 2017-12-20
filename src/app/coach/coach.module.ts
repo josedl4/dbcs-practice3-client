@@ -11,11 +11,17 @@ import { CoachAddComponent } from './coach-add/coach-add.component';
 import { CoachDeleteComponent } from './coach-delete/coach-delete.component';
 import { CoachService } from './coach.service';
 
+/**
+ * Ruteamos entre las opciones del admin
+ */
 const coachRouting: ModuleWithProviders = RouterModule.forChild([
   { path: 'coach-add', component: CoachAddComponent, canActivate: [AuthGuard] },
   { path: 'coach-delete', component: CoachDeleteComponent, canActivate: [AuthGuard]}
 ]);
 
+/**
+ * Modulo Entrenador
+ */
 @NgModule({
   imports: [
     FormsModule,

@@ -5,6 +5,9 @@ import { Player } from '../shared/model/player';
 import { Team } from '../shared/model/team';
 import { Competition } from '../shared/model/competition';
 
+/**
+ * Servicio de las operaciones del admin
+ */
 @Injectable()
 export class AdminService {
 
@@ -12,6 +15,9 @@ export class AdminService {
 
   constructor(private http: Http) { }
 
+  /**
+   * Obtiene las ligas del API
+   */
   getLeagues(): Promise<Array<Competition>> {
     const url = 'http://api.football-data.org/v1/competitions/?season=2017';
 
@@ -38,6 +44,10 @@ export class AdminService {
     }).catch(this.handleError);
   }
 
+  /**
+   * Obtiene los equipos
+   * @param competition
+   */
   getTeams(competition: number): Promise<Array<Team>> {
     const url = 'http://api.football-data.org/v1/competitions/'
      + competition + '/teams';
@@ -60,6 +70,11 @@ export class AdminService {
     }).catch(this.handleError);
   }
 
+  /**
+   * Obtiene los jugadores del equipo
+   *
+   * @param apiUrl
+   */
   getPlayers(apiUrl: string): Promise<Array<Player>> {
     const url = apiUrl;
 
@@ -97,6 +112,11 @@ export class AdminService {
     }).catch(this.handleError);
   }
 
+  /**
+   * Gestor de errores
+   *
+   * @param error
+   */
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);

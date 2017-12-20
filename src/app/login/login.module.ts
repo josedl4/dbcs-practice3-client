@@ -9,10 +9,16 @@ import { HttpModule } from '@angular/http';
 import { LoginComponent } from './login.component';
 import { LoginService } from './login.service';
 
+/**
+ * Routing del login
+ */
 const loginRouting: ModuleWithProviders = RouterModule.forChild([
   { path: '', component: LoginComponent}
 ]);
 
+/**
+ * Modulo login
+ */
 @NgModule({
   imports: [
     FormsModule,

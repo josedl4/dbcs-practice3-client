@@ -1,3 +1,6 @@
+/**
+ * Clase jugador para gestionar el recurso
+ */
 export class Player {
     contractuntil: string;
     dateofbirth: string;
@@ -8,6 +11,18 @@ export class Player {
     nationality: string;
     position: string;
 
+    /**
+     * Constructor de clase jugador
+     *
+     * @param contractuntil 
+     * @param dateofbirth 
+     * @param id 
+     * @param jerseynumber 
+     * @param marketvalue 
+     * @param name 
+     * @param nationality 
+     * @param position 
+     */
     constructor(
         contractuntil: string,
         dateofbirth: string,

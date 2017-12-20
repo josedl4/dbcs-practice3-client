@@ -3,6 +3,9 @@ import { Headers, Http, Response, RequestOptions} from '@angular/http';
 
 import { Player } from '../shared/model/player';
 
+/**
+ * Servicio para acceder a los recursos del entrenador
+ */
 @Injectable()
 export class CoachService {
 
@@ -10,6 +13,9 @@ export class CoachService {
 
   constructor(private http: Http) { }
 
+  /**
+   * Obtener jugadores del equipo
+   */
   getPlayersInTeam(): Promise<Array<Player>> {
     const url = this.coachUrl + '/' + localStorage.getItem('username')
     + '/jugadores';
@@ -36,6 +42,9 @@ export class CoachService {
     }).catch(this.handleError);
   }
 
+  /**
+   * Obtener jugadores sin equipo
+   */
   getPlayersWithoutTeam(): Promise<Array<Player>> {
     const url = this.coachUrl + '/jugadores';
 
@@ -62,15 +71,23 @@ export class CoachService {
     }).catch(this.handleError);
   }
 
+  /**
+   * Añade jugador al equipo
+   * @param playerId
+   */
   addPlayer(playerId: number): any {
     const url = this.coachUrl + '/' + localStorage.getItem('username')
     + '/jugador/' + playerId;
 
-    return this.http.put(url, null).toPromise().then(response => {
+    return this.http.post(url, null).toPromise().then(response => {
       return 'ok';
     }).catch(this.handleError);
   }
 
+  /**
+   * Elimina jugador del equipo
+   * @param playerId 
+   */
   deletePlayer(playerId: number): any {
     const url = this.coachUrl + '/' + localStorage.getItem('username')
     + '/jugador/' + playerId;
@@ -80,6 +97,10 @@ export class CoachService {
     }).catch(this.handleError);
   }
 
+  /**
+   * Manejador de los errores
+   * @param error 
+   */
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);

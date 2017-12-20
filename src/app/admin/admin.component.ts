@@ -5,6 +5,9 @@ import { Team } from '../shared/model/team';
 import { Competition } from '../shared/model/competition';
 import { AdminService } from './admin.service';
 
+/**
+ * Componente del admin
+ */
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -28,11 +31,16 @@ export class AdminComponent implements OnInit {
 
   constructor(private adminService: AdminService) { }
 
+  /**
+   * Función onInit, se ejecuta al iniciar
+   */
   ngOnInit() {
     this.getCompetitions();
   }
 
-
+  /**
+   * Obtiene las competiciones del servicio
+   */
   getCompetitions(): void {
     this.adminService.getLeagues().then(competitions => {
       this.competitions = competitions;
@@ -44,6 +52,9 @@ export class AdminComponent implements OnInit {
     }).catch(error => this.error = error);
   }
 
+  /**
+   * Obtiene los equipos del servicio
+   */
   getTeams(): void {
     this.adminService.getTeams(this.competitionSelected.id).then(teams => {
       this.teams = teams;
@@ -56,6 +67,9 @@ export class AdminComponent implements OnInit {
 
   }
 
+  /**
+   * Obtiene los jugadores del servicio
+   */
   getPlayers(): void {
     this.adminService.getPlayers(this.teamSelected.playersAPI).then(players => {
       this.players = players;
@@ -63,6 +77,9 @@ export class AdminComponent implements OnInit {
     }).catch(error => this.error = error);
   }
 
+  /**
+   * Se añade el jugador empleando el servicio
+   */
   importPlayer(): void {
     console.log(this.competitionSelected);
     console.log(this.teamSelected);

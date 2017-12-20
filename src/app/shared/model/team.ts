@@ -1,3 +1,6 @@
+/**
+ * Clase equipo para gestionar el recurso
+ */
 export class Team {
 
     name: string;
@@ -5,6 +8,14 @@ export class Team {
     shortName: string;
     playersAPI: string;
 
+    /**
+     * Constructor de la clase equipo
+     *
+     * @param name 
+     * @param code 
+     * @param shortName 
+     * @param playersAPI 
+     */
     constructor (
         name: string,
         code: string,

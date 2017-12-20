@@ -13,6 +13,9 @@ import { CoachModule } from './coach/coach.module';
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([],
   {useHash: true});
 
+/**
+ * Modulo principal de la aplicación
+ */
 @NgModule({
   declarations: [
     AppComponent

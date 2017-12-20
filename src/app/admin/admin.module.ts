@@ -10,10 +10,16 @@ import { AdminComponent } from './admin.component';
 import { AuthGuard } from '../shared/guards/auth.guard';
 import { AdminService } from './admin.service';
 
+/**
+ * Routing del admin
+ */
 const adminRouting: ModuleWithProviders = RouterModule.forChild([
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard]}
 ]);
 
+/**
+ * Modulo del Admin
+ */
 @NgModule({
   imports: [
     FormsModule,

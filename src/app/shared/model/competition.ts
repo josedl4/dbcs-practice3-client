@@ -1,3 +1,6 @@
+/**
+ * Clase competición para gestionar el recurso
+ */
 export class Competition {
 
     id: number;
@@ -10,6 +13,19 @@ export class Competition {
     numberOfGames: number;
     lastUpdated: string;
 
+    /**
+     * Constructor de la clase competición
+     *
+     * @param id 
+     * @param caption 
+     * @param league 
+     * @param year 
+     * @param currentMatchday 
+     * @param numberOfMatchdays 
+     * @param numberOfTeams 
+     * @param numberOfGames 
+     * @param lastUpdated 
+     */
     constructor (id: number,
         caption: string,
         league: string,

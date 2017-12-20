@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 
 import {LoginService } from './login.service';
 
+/**
+ * Component login
+ */
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -29,6 +32,9 @@ export class LoginComponent implements OnInit {
     localStorage.clear();
   }
 
+  /**
+   * Función llamada al enviar datos
+   */
   onSubmit() {
     console.log(this.username + ' ' + this.password + ' ' + this.selectedType);
     this.loginService.logIn(this.username, this.password)
@@ -45,6 +51,10 @@ export class LoginComponent implements OnInit {
       });
   }
 
+  /**
+   * Realiza el routing a entre los tipos de usuario
+   * @param type 
+   */
   routingByType(type: string): void {
     switch (type) {
       case 'admin': {
